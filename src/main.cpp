@@ -1,7 +1,12 @@
 #include <iostream>
+#include <ncurses.h>
 
 int main(int argc, char** argv) {
-	std::cout << "Welcome to Terade!" << std::endl;
+	initscr();
+	printw("Welcome to Terade!");
+	refresh();
+	getch();
+	endwin();
 
 	return 0;
 }
