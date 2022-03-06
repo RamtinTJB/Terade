@@ -14,7 +14,7 @@ After the user executes the program, she will see an ASCII art followed with two
 Each item in the list of assets includes the following information (These pieces of data are obtained from the CoinGecko API):
 
 - Asset's tick (eg. BTC, ETH, ADA, ...)
-- Current price (eg. $1.45)
+- Current price (eg. $1.45): Current price means the price of the asset at a specific time within the simulated environment. The prices do not reflect the real time data.
 - Precentage change of the price in the past 24 hours. The number will be shown in green or red depending on the price movement. If the price has increased in the past 24 hours, then the number will be shown in green. 
 - Precentage change of the price in the past 7 days.
 - Market Cap of the asset. This is calculated by multiplying the number of circulating coins by the price of each individual coin.
@@ -60,7 +60,7 @@ The portfolio page contains the list of user's holdings. At the top of the page,
 	- Ability to create different portfolios
 	- Convert the value of the portfolio to different currencies
 
-* Connecting with the CoinGecko API to pull real time data about crypto currencies.
+* Connecting with the CoinGecko API to pull historical data about crypto currencies using the `market_chart/range` GET Request.
 
 ## Out of Scope
 
