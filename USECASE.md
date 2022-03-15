@@ -1,7 +1,7 @@
 ## Use Case Specification: Buy Assets
 
 1. **Use Case Name: Buy Assets**
-    * **Brief Description**
+    * **Brief Description:**
     The Buy Assets use case allows the player to purchase an asset by spending his/her available cash.
     * **Actor(s):** Player
 
@@ -17,7 +17,7 @@
         4. The money spent is reduced from the **Player's** spendable cash.
         5. The purchased tokens are added to the **Player's** portfolio.
     * **Alternative Flows**
-        * The **Player** may cancel the purchase in step 3 or step 2 by pressing **ESC** instead of **Enter**; in which case the use case ends.
+        * The **Player** may cancel the purchase in step b or step c by pressing **ESC** instead of **Enter**; in which case the use case ends.
         
 4. **Post-Conditions**
     * **First Post-Condition:** The sum of buy-price of the purchased token times the quantitiy purchased and fees and the available cash after the purchase, must equal the amount of cash available before the purchase. In other words, no money should be losst or created during the purchase.
@@ -25,7 +25,7 @@
 ## Use Case Specification: Sell Assets
 
 1. **Use Case Name: Sell Assets**
-    * **Brief Description** 
+    * **Brief Description:** 
     The Sell Assets use case allows the player to purchase an already purchased asset from his/her portfolio.
     * **Actor(s):** Player
 
@@ -41,7 +41,7 @@
         4. The money earned by selling the tokens is added to the **Player's** available cash balance.
         5. The quantity of tokens sold is removed from **Player's** portfolio.
     * **Alternative Flows**
-        * The **Player** may cancel the transaction in step 2 or step 3 by pressing **ESC** instead of **Enter**; in which case the use case ends.
+        * The **Player** may cancel the transaction in step b or step c by pressing **ESC** instead of **Enter**; in which case the use case ends.
 
 4. **Post-conditions**
     * **First Post-Condition:** The sell_price*quantity_sold must be equal to the difference of the **player's** available cash balance before and after the transaction.
@@ -49,7 +49,7 @@
 ## Use Case Specification: Save
 
 1. **Use Case Name: Save**
-    * **Brief Description**
+    * **Brief Description:**
     The Save use case allows the **Player** to save the state of the game and freeze the game's clock so that he/she can continue playing at a later time.
     * **Actor(s):** Player
 
@@ -63,7 +63,7 @@
         3. If the file name is not valid or there is no input provided, the **Player** is prompted again to enter an appropriate value. 
         4. The state of the game is written to the filename specified by the **Player** with .terade as the file extension.
     * **Alternative Flows**
-        * The **Player** may cancel the save operation in step 2 by pressing **ESC** instead of entering a value for the filename, in which case the use case ends.
+        * The **Player** may cancel the save operation in step b by pressing **ESC** instead of entering a value for the filename, in which case the use case ends.
         * If the game has already been saved or had been loaded from a file, it will be automatically saved in the same file instead of prompting the **Player** for a filename.
     
 4. **Post-Conditions**
@@ -72,7 +72,7 @@
 ## Use Case Specification: Load
 
 1. **Use Case Name: Load**
-    * **Brief Description**
+    * **Brief Description:**
     The Load use case allows the **Player** to load a previsouly saved state of the game and continue playing where he/she had left off.
     * **Actor(s):** Player
 
@@ -85,7 +85,7 @@
         3. If the **{filename}.terade** doesn't exist in the current working directory, the **Player** is asked to enter a valid filename.
         4. The game data and **Player's** portfolio and available cash balance is populated with the data in the **{filename}.terade**.
     * **Alternative Flows**
-        * The **Player** may cancel the load operation in step 2 by pressing **ESC** instead of entering a filename, in which case a new game will start.
+        * The **Player** may cancel the load operation in step b by pressing **ESC** instead of entering a filename, in which case a new game will start.
         
 4. **Post-Conditions**
     * **First Post-Condition:** The state of the simulation must match that of the saved file after the load operation is performed.
