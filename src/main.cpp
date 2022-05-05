@@ -1,12 +1,15 @@
 #include <iostream>
-#include <ncurses.h>
+#include <memory>
+
+#include "asset.h"
+#include "view_curses.h"
+#include "api.h"
+#include "game.h"
 
 int main(int argc, char** argv) {
-	initscr();
-	printw("Welcome to Terade!");
-	refresh();
-	getch();
-	endwin();
+	game g;
+	g.set_view(std::unique_ptr<view>(new view_curses));
+	g.start();
 
 	return 0;
 }

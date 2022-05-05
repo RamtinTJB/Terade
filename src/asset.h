@@ -71,23 +71,47 @@ class market_data {
 		double _24_hour_change() const { return _24_hour_change_; }
 };
 
+//using asset_id = std::string;
+class asset_id {
+	private:
+		std::string id_;
+		bool valid_ = false; 
+	public:
+		asset_id() = delete;
+		asset_id(const std::string& id) : id_ {id} {}
+		asset_id(const asset_id& other) { id_ = other.id_; }
+
+		operator std::string() const { return id_; }
+		std::string id() const { return id_; }
+
+		bool operator== (const asset_id& other) {
+			return id_ == other.id();
+		}
+};
+
+inline bool operator< (const asset_id& lhs, const asset_id& rhs) {
+	return lhs.id() < rhs.id();
+}
+
 class asset {
 	private:
-		const std::string name_;  // Name of the token: e.g. Bitcoin
-		const std::string tick_;  // e.g. BTC
-		market_data* data_;       // inforomation of an asset at a specific time
+		asset_id id_;
+		std::string name_;  // Name of the token: e.g. Bitcoin
+		std::string tick_;  // e.g. BTC
+		market_data data_;       // inforomation of an asset at a specific time
 	public:
-		asset() = default;
-		asset(const std::string name,  const std::string tick, market_data* data) :
+		asset() = delete;
+		asset(const asset_id& id, const std::string& name,  const std::string& tick, market_data data) :
+			id_ {id},
 			name_ {name}, 
 			tick_ {tick},
 			data_ {data} {}
 
 		std::string name() const { return name_; }
 		std::string tick() const { return tick_; }
-		market_data* data() const { return data_; }
+		market_data data() const { return data_; }
 
-		void update_data(market_data* data) { data_ = data; }
+		void update_data(const market_data& data) { data_ = data; }
 };
 
 // Print asset and its current market data for debuggin purposes.
@@ -101,7 +125,7 @@ inline std::ostream& operator<< (std::ostream& os, const market_data& m) {
 
 inline std::ostream& operator<< (std::ostream& os, const asset& a) {
 	return os << "Name: " << a.name() << "\tTick: " << a.tick()
-		<< std::endl << *(a.data());
+		<< std::endl << a.data();
 }
 
 #endif
