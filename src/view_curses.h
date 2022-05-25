@@ -18,7 +18,8 @@ class view_curses : public view {
 			teardown();
 		}
 
-		void update_token_list(const std::vector<asset>& assets) override;
+		void update_list(const std::vector<std::string>&, const std::string&) override;
+		void set_list_title(const std::string& title) override;
 		void update_status_bar(const player& p) override;
 		std::string get_entry() override;
 		std::string get_input(const std::string& prompt) override;
@@ -32,8 +33,7 @@ class view_curses : public view {
 
 	private:
 		WINDOW* prompt_ = nullptr;
-		WINDOW* token_list_ = nullptr;
-		WINDOW* portfolio_ = nullptr;
+		WINDOW* main_list_ = nullptr;
 		WINDOW* status_bar_ = nullptr;
 		WINDOW* input_win = nullptr;
 		WINDOW* help_win_ = nullptr;
@@ -47,20 +47,24 @@ class view_curses : public view {
 		int status_wd = maxwidth_;
 		int input_ht = 3;
 		int input_wd = 20;
-		int help_ht = 11;
+		int help_ht = 13;
 		int help_wd = 50;
 
-		const char* clear_line_ = "                                                                              ";
+		char clear_line_[75];
+
+		void clear_list();
 
 		void setup();
 
 		void setup_prompt();
-		void setup_token_list();
-		void setup_portfolio();
+		void setup_main_list();
 		void setup_status_bar();
 
 		void setup_colors() const;
+
 		void set_color() const;
+
+		std::string get_input_curses(const std::string& prompt);
 };
 
 #endif

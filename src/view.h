@@ -16,7 +16,8 @@ class view {
 		view(int width, int height): width_{width}, height_{height} {};
 		virtual ~view() = default;
 
-		virtual void update_token_list(const std::vector<asset>& assets) = 0;
+		virtual void update_list(const std::vector<std::string>&, const std::string&) = 0;
+		virtual void set_list_title(const std::string&) = 0;
 		virtual void update_status_bar(const player& p) = 0;
 		virtual std::string get_entry() = 0;
 		virtual std::string get_input(const std::string& prompt) = 0;

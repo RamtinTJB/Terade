@@ -31,6 +31,8 @@ class player {
 		void sell_asset(const transaction& tx);
 
 		portfolio get_selected_portfolio() { return portfolios_[selected_portfolio_]; }
+		std::vector<portfolio> get_portfolios();
+		void evaluate_portfolios(CoinGeckoApi& api, const double epoch_time_index);
 };
 
 #endif
