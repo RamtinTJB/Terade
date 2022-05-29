@@ -44,6 +44,7 @@ void game::save_to_file(const std::string& file_path) {
 
 	std::ofstream out_file(file_path, std::ios::trunc);
 	out_file << j.dump(4);
+	out_file.close();
 }
 
 void game::load_from_file(const std::string& file_path) {
@@ -65,4 +66,5 @@ void game::load_from_file(const std::string& file_path) {
 		}
 	}
 	player_.select_portfolio(j["selected_portfolio"]);
+	in_file.close();
 }

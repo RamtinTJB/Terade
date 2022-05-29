@@ -108,6 +108,9 @@ class asset {
 			data_ {data} {}
 
 		std::string name() const { return name_; }
+		//operator std::string() const {
+			// asset formatter =|
+		//}
 		std::string tick() const { return tick_; }
 		market_data data() const { return data_; }
 

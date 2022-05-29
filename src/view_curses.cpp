@@ -66,7 +66,7 @@ void view_curses::clear_list() {
 
 void view_curses::update_status_bar(const player& p) {
 	mvwprintw(status_bar_, 0, 0, clear_line_);
-	mvwprintw(status_bar_, 0, 1, (p.name() + " (Cash: $" + std::to_string(p.available_cash()) + ")").c_str());
+	mvwprintw(status_bar_, 0, 1, (p.name() + " (Cash: $" + prettify_price(p.available_cash()) + ")").c_str());
 	wrefresh(status_bar_);
 }
 

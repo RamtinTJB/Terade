@@ -36,4 +36,8 @@ file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/data/all_coins.json
 	${CMAKE_CURRENT_SOURCE_DIR}/data/bitcoin.json
 	${CMAKE_CURRENT_SOURCE_DIR}/data/ethereum.json
 	${CMAKE_CURRENT_SOURCE_DIR}/data/cardano.json
+	${CMAKE_CURRENT_SOURCE_DIR}/data/dogecoin.json
+	${CMAKE_CURRENT_SOURCE_DIR}/data/binancecoin.json
+	${CMAKE_CURRENT_SOURCE_DIR}/data/stellar.json
+	${CMAKE_CURRENT_SOURCE_DIR}/data/maker.json
 	DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

@@ -6,14 +6,14 @@ using std::left;
 
 std::string asset_formatter(const asset& a) {
 	std::stringstream ss;
-	ss << left << setw(10) << a.name() << setw(10) << upper_case_str(a.tick()) << setw(15) << prettify_price(a.data().price()) << setw(25) << prettify_price(a.data().volume());
+	ss << left << setw(10) << a.name() << setw(10) << upper_case_str(a.tick()) << setw(15) << prettify_price(a.data().price()) << setw(20) << prettify_price(a.data().volume()) << setw(20) << prettify_price(a.data().market_cap());
 	
 	return ss.str();
 }
 
 std::string asset_list_header() {
 	std::stringstream ss;
-	ss << left << setw(10) << "Name" << setw(10) << "Tick" << setw(15) << "Price ($)" << setw(25) << "Volume ($)";
+	ss << left << setw(10) << "Name" << setw(10) << "Tick" << setw(15) << "Price ($)" << setw(20) << "Volume ($)" << setw(20) << "Market Cap ($)";
 	
 	return ss.str();
 }

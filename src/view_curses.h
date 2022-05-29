@@ -7,6 +7,7 @@
 
 #include "view.h"
 #include "asset.h"
+#include "utils.h"
 
 class view_curses : public view {
 	public:

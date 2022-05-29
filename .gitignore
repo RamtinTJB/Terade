@@ -51,3 +51,7 @@ Sessionx.vim
 # generated build files
 build*/
 extern/
+
+# scope and usecase documents
+SCOPE.md
+USECASE.md

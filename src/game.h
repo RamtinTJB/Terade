@@ -27,12 +27,13 @@ class game {
 	private:
 		player player_ {"default"};
 		std::unique_ptr<view> view_ = nullptr;
-		CoinGeckoApi api_ {{{"bitcoin"}, {"ethereum"}, {"cardano"}}};
+		CoinGeckoApi api_ {{{"bitcoin"}, {"ethereum"}, {"cardano"}, {"dogecoin"}, {"binancecoin"}, {"stellar"}, {"maker"}}};
 		Error error_ = Error::NO_ERROR;
+		// change name
 		long epoch_time_index_ = 1;
 		std::string file_path_;
-		std::map<std::string, std::function<void(void)>> commands_;
 		Timer timer_;
+		std::map<std::string, std::function<void(void)>> commands_;
 
 		//for test purposes (prototype)
 		int get_input_num(const std::string& prompt);
