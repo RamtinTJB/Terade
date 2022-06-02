@@ -10,6 +10,14 @@ For my honor's project for the *CISC 187: Data Structures in C++* I chose to cre
 	<img width="460" height="300" src="/img/Screenshot1.png">
 </p>
 
+<p align="center">
+	<img width="460" height="300" src="/img/Screenshot2.png">
+</p>
+
+<p align="center">
+	<img width="460" height="300" src="/img/Screenshot3.png">
+</p>
+
 ## Libraries/APIs Used
 
 * **[CoinGecko API](https://www.coingecko.com/en/api)**
@@ -75,3 +83,13 @@ cd src
 ```
 
 ## Credits
+
+I want to give special thanks to [David Parillo](https://github.com/daveparillo), who guided me at every step of the way and shared best practices and great resources with me.
+
+## License
+
+<img align="right" src="https://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">
+
+The project is licensed under the [MIT License](https://opensource.org/licenses/MIT):
+
+Copyright &copy; 2022 Ramtin Tajbakhsh
