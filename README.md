@@ -84,7 +84,7 @@ cd src
 
 ## Credits
 
-I want to give special thanks to [David Parillo](https://github.com/daveparillo), who guided me at every step of the way and shared best practices and great resources with me.
+I want to give special thanks to [David Parillo](https://github.com/daveparillo), who guided me every step of the way and shared best practices and great resources with me.
 
 ## License
 
