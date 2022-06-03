@@ -12,14 +12,14 @@ void player::select_portfolio(const std::string& name) {
 	}
 }
 
+// TODO: More conditions should be checked in purchase_asset and sell_asset before modifying available_cash
+
 void player::purchase_asset(const transaction& tx) {
-	//portfolios_[selected_portfolio_].add_asset(tx.id(), tx.price());
 	portfolios_[selected_portfolio_].add_tx(tx);
 	available_cash_ -= tx.quantity()*tx.price();
 }
 
 void player::sell_asset(const transaction& tx) {
-	//portfolios_[selected_portfolio_].remove_asset(tx.id(), tx.quantity());
 	portfolios_[selected_portfolio_].add_tx(tx);
 	available_cash_ += tx.quantity()*tx.price();
 }

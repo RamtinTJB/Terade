@@ -4,12 +4,20 @@
 #include <string>
 #include <iostream>
 
-// Initialize market_data using the builder class
+/*
+ * Initialize market_data using the builder class
+ *
+ * market_data::Builder b;
+ * b.price(...).market_cap(...).volume(...);
+ * asset a {"bitcoin", "Bitcoin", "BTC", b.build()};
+ */
 class market_data {
 	private:
 		double price_ = 0;             // $
 		double market_cap_ = 0;        // $
 		double volume_ = 0;            // $
+
+		// These two member variables are currently not used in the program.
 		double _7_day_change_ = 0;     // %change of the price in the past 7 days
 		double _24_hour_change_ = 0;   // %change of the price in the past 24 hours
 	public:
@@ -71,11 +79,10 @@ class market_data {
 		double _24_hour_change() const { return _24_hour_change_; }
 };
 
-//using asset_id = std::string;
 class asset_id {
 	private:
+		// id_ is the same id found in the json files returned but the CoinGecko API. e.g. bitcoin
 		std::string id_;
-		bool valid_ = false; 
 	public:
 		asset_id() = delete;
 		asset_id(const std::string& id) : id_ {id} {}
@@ -108,9 +115,6 @@ class asset {
 			data_ {data} {}
 
 		std::string name() const { return name_; }
-		//operator std::string() const {
-			// asset formatter =|
-		//}
 		std::string tick() const { return tick_; }
 		market_data data() const { return data_; }
 

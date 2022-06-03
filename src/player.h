@@ -9,11 +9,21 @@
 #include "utils.h"
 #include "transaction.h"
 
+/*
+ *   The player class stores all the information relevant to the player of the simlutor.
+ *   Each player has a name, an arbitrary number of portfolios, and some disposable cash at any time.
+ */
+
 class player {
 	private:
 		std::string name_;
+
+		// Maps portfolio's name to the portfolio. I used the map for easier retrieval.
 		std::map<std::string, portfolio> portfolios_;
+
 		double available_cash_ {0};
+
+		// Curerntly active portfolio. All buy and sell operations are done on the selected portfolio
 		std::string selected_portfolio_;
 	public:
 		player() = delete;
@@ -32,6 +42,8 @@ class player {
 
 		portfolio get_selected_portfolio() { return portfolios_[selected_portfolio_]; }
 		std::vector<portfolio> get_portfolios();
+
+		// Evaluate each portfolio at current time and update their status
 		void evaluate_portfolios(CoinGeckoApi& api, const double epoch_time_index);
 };
 
